@@ -35,9 +35,9 @@ def query_notion_db():
     response = requests.post(url, headers=headers, data=payload)
     response.raise_for_status()
 
-    output = {
-        'response': response.json(),
-        'totalCount': len(response.json().get('results'))
-    }
+    # output = {
+    #     'response': response.json(),
+    #     'totalCount': len(response.json().get('results'))
+    # }
 
-    return output
+    return response.json()
