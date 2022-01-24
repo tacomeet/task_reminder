@@ -21,8 +21,11 @@ members = {
 @app.route('/')
 def index():
     res = notion.query_notion_db()
-
     now = datetime.now().strftime("%Y年%m月%d日 %H:%M:%S")
+
+    if len(res['results']) == 0:
+        client.chat_postMessage(channel="#task", text=f'{now} 時点で期限が過ぎているタスクはありません！お疲れ様です！')
+        return 'OK'
     client.chat_postMessage(channel="#task", text=f'{now} 時点で期限が過ぎているタスクはこちらです！')
 
     for todo in res['results']:
