@@ -54,7 +54,7 @@ def index():
                                      f"`Start`: {start}\n"
                                      f"`Deadline`: {deadline}")
 
-    return res
+    return 'OK'
 
 
 if __name__ == '__main__':
