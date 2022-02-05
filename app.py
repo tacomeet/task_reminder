@@ -14,6 +14,7 @@ members = {
     config.SHUN_EMAIL: config.SHUN_SLACK,
     config.KOICHI_EMAIL: config.KOICHI_SLACK,
     config.MOROMIN_EMAIL: config.MOROMIN_SLACK,
+    config.CHISE_EMAIL: config.CHISE_SLACK,
     '': ''
 }
 
