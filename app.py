@@ -34,11 +34,11 @@ def index():
     for todo in res['results']:
         try:
             user_email = todo['properties']['Owner']['people'][0]['person']['email']
-        except TypeError:
+        except (TypeError, IndexError):
             user_email = ''
         try:
             title = todo['properties']['Project name']['title'][0]['plain_text']
-        except TypeError:
+        except (TypeError, IndexError):
             title = ''
         try:
             status = todo['properties']['Status']['select']['name']
